@@ -5,7 +5,7 @@ public class Word {
     public String word;
     public String meaning;
 
-
+//Wordは下記のデータを持っている
     public Word(String word,String meaning){
         this.word = word;
         this.meaning = meaning;
@@ -13,6 +13,6 @@ public class Word {
 
     //メソッド
     public void attack(){
-        System.out.println("単語"+word+"：意味"+meaning);
+        System.out.println("単語:"+this.word+" 意味:"+this.meaning);
     }
 }
