@@ -1,10 +1,11 @@
-package com.company.ColLesson01;
+package com.company.ColLesson04;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
-public class ColLesson01 {
+public class ColLesson04 {
     public static void main(String[] args) {
-        Word[] words = new Word[10]; //オブジェクトの配列
+        ArrayList<Word4> words = new ArrayList<>(); //ArrayListに修正
 
         //※入力
         Scanner scanner = new Scanner(System.in);
@@ -15,18 +16,21 @@ public class ColLesson01 {
         int index=0;
         while(!input.equals("e")) {
             String[] tmp = input.split(" "); //tmpという配列に半スぺで区切って格納
-            Word wd = new Word(tmp[0],tmp[1]); //オブジェクト作る
-            words[index] =wd; //オブジェクトを配列に入れて10個作る
+            Word4 wd = new Word4(tmp[0],tmp[1]); //オブジェクト作る
+            try {
+                words.add(wd); //オブジェクトを配列に入れて5個作る
+            }
+            catch (IndexOutOfBoundsException e){
+                System.out.println("登録制限を超えました。登録済のデータは以下になります");
+                break;
+            }
             index++;
             System.out.println("次の単語と意味を入力してください。”e”で終了します");
             input = scanner.nextLine(); //2回目以降はループさせる
         }
         for(int i =0; i<index; i++) {
-            System.out.println("単語" + words[i].word + " 日本語" + words[i].meaning); //wordsオブジェクト[i]のwordとmeaning
+            System.out.println(words.get(i)); //オブジェクト[i]のwordとmeaning
         }
-        System.out.println(index+"件登録しました");
+        System.out.println(words.size()+"件登録しました");
     }
 }
-
-
-

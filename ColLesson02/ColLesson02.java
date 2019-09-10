@@ -1,10 +1,10 @@
-package com.company.ColLesson01;
+package com.company.ColLesson02;
 
 import java.util.Scanner;
 
-public class ColLesson01 {
+public class ColLesson02 {
     public static void main(String[] args) {
-        Word[] words = new Word[10]; //オブジェクトの配列
+        Word2[] words = new Word2[10]; //オブジェクトの配列
 
         //※入力
         Scanner scanner = new Scanner(System.in);
@@ -15,18 +15,15 @@ public class ColLesson01 {
         int index=0;
         while(!input.equals("e")) {
             String[] tmp = input.split(" "); //tmpという配列に半スぺで区切って格納
-            Word wd = new Word(tmp[0],tmp[1]); //オブジェクト作る
+            Word2 wd = new Word2(tmp[0],tmp[1]); //オブジェクト作る
             words[index] =wd; //オブジェクトを配列に入れて10個作る
             index++;
             System.out.println("次の単語と意味を入力してください。”e”で終了します");
             input = scanner.nextLine(); //2回目以降はループさせる
         }
         for(int i =0; i<index; i++) {
-            System.out.println("単語" + words[i].word + " 日本語" + words[i].meaning); //wordsオブジェクト[i]のwordとmeaning
+            System.out.println(words[i]); //オブジェクト[i]のwordとmeaning
         }
         System.out.println(index+"件登録しました");
     }
 }
-
-
-
