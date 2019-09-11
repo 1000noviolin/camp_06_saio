@@ -22,7 +22,7 @@ public class ColLesson01 {
             input = scanner.nextLine(); //2回目以降はループさせる
         }
         for(int i =0; i<index; i++) {
-            System.out.println("単語" + words[i].word + " 日本語" + words[i].meaning); //wordsオブジェクト[i]のwordとmeaning
+            System.out.println("単語:" + words[i].word + " 日本語:" + words[i].meaning); //wordsオブジェクト[i]のwordとmeaning
         }
         System.out.println(index+"件登録しました");
     }
